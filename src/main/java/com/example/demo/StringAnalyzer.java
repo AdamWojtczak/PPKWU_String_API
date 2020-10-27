@@ -12,11 +12,12 @@ import static java.lang.Character.isUpperCase;
 public class StringAnalyzer {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String reverseString( @RequestParam("stringToBeReversed") String stringToBeAnalyzed) {
+	public String reverseString( @RequestParam("stringToBeAnalyzed") String stringToBeAnalyzed) {
+
+		int lowerCaseCounter = 0, upperCaseCounter = 0, numericCounter = 0, specialSignCounter = 0;
 
 		for (int i = 0; i < stringToBeAnalyzed.length(); i++) {
 			char oneChar = stringToBeAnalyzed.charAt(i);
-			int lowerCaseCounter = 0, upperCaseCounter = 0, numericCounter = 0, specialSignCounter = 0;
 			if (isLowerCase(oneChar)) {
 				lowerCaseCounter++;
 			} else if (isUpperCase(oneChar)) {
@@ -28,7 +29,22 @@ public class StringAnalyzer {
 			}
 		}
 
-		return stringToBeAnalyzed;
+		StringBuilder stringBuilder = new StringBuilder();
+
+		if (lowerCaseCounter > 0) {
+			stringBuilder.append("There are " + lowerCaseCounter + " lower case letters\n");
+		}
+		if (upperCaseCounter > 0) {
+			stringBuilder.append("There are " + upperCaseCounter + " upper case letters\n");
+		}
+		if (specialSignCounter > 0) {
+			stringBuilder.append("There are " + specialSignCounter + " special signs\n");
+		}
+		if (numericCounter > 0) {
+			stringBuilder.append("There are " + numericCounter + " numeric signs\n");
+		}
+
+		return stringBuilder.toString();
 	}
 
 	private boolean isSpecialSign(char oneChar) {
