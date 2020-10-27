@@ -32,10 +32,18 @@ public class StringAnalyzer {
 	}
 
 	private boolean isSpecialSign(char oneChar) {
-		return true;
+		if ("/!@#$%^&*()_+-=;':\"{}[]".indexOf(oneChar) != -1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private boolean isNumeric(char oneChar) {
-		return true;
+		if (Character.isDigit(oneChar)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
