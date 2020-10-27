@@ -32,16 +32,16 @@ public class StringAnalyzer {
 		StringBuilder stringBuilder = new StringBuilder();
 
 		if (lowerCaseCounter > 0) {
-			stringBuilder.append("There are " + lowerCaseCounter + " lower case letters\n");
+			stringBuilder.append("<p> There are " + lowerCaseCounter + " lower case letters </p>");
 		}
 		if (upperCaseCounter > 0) {
-			stringBuilder.append("There are " + upperCaseCounter + " upper case letters\n");
+			stringBuilder.append("<p> There are " + upperCaseCounter + " upper case letters </p>");
 		}
 		if (specialSignCounter > 0) {
-			stringBuilder.append("There are " + specialSignCounter + " special signs\n");
+			stringBuilder.append("<p> There are " + specialSignCounter + " special signs </p>");
 		}
 		if (numericCounter > 0) {
-			stringBuilder.append("There are " + numericCounter + " numeric signs\n");
+			stringBuilder.append("<p> There are " + numericCounter + " numeric signs </p>");
 		}
 
 		return stringBuilder.toString();
