@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import static java.lang.Character.isLowerCase;
+import static java.lang.Character.isUpperCase;
+
 @RestController
 public class StringAnalyzer {
 
@@ -20,11 +23,19 @@ public class StringAnalyzer {
 				upperCaseCounter++;
 			} else if (isSpecialSign(oneChar)) {
 				specialSignCounter++;
-			} else if (isNumeric(onceChar)) {
+			} else if (isNumeric(oneChar)) {
 				numericCounter++;
 			}
 		}
 
 		return stringToBeAnalyzed;
+	}
+
+	private boolean isSpecialSign(char oneChar) {
+		return true;
+	}
+
+	private boolean isNumeric(char oneChar) {
+		return true;
 	}
 }
